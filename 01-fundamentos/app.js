@@ -1,6 +1,7 @@
 /* ============================================================
-   app.js — Fundamentos de JavaScript: variables y console.log
+   app.js — Sección 2: Introducción a JavaScript y la consola
    ============================================================ */
+
 
 /* ------------------------------------------------------------
    1. console.log() — ¿qué hace?
@@ -112,7 +113,117 @@ console.table([a, b, c, d]);
 
 
 /* ------------------------------------------------------------
-   9. Nota general
+   9. Depuración y breakpoints
+   ------------------------------------------------------------
+   - Un breakpoint es un "punto de quiebre": pausa la ejecución
+     del código justo en esa línea.
+   - Se pone desde las DevTools del navegador (pestaña "Sources"
+     en Chrome), haciendo click en el número de línea.
+   - Con el código pausado puedes:
+       > ver el valor actual de cada variable
+       > avanzar línea por línea (step over / step into / step out)
+       > revisar la pila de llamadas (call stack)
+   - También se puede forzar la pausa desde el código con la
+     palabra reservada `debugger;` (funciona igual que un breakpoint
+     puesto manualmente).
+   - Ventaja sobre console.log: puedes ver TODO el estado del
+     programa en ese instante, no solo lo que decidiste imprimir.
+*/
+function sumar(x, y) {
+    debugger; // al ejecutar esto en el navegador, se pausa aquí
+    const resultado = x + y;
+    return resultado;
+}
+
+console.log(sumar(2, 3));
+
+
+/* ------------------------------------------------------------
+   10. Orden y lugar de las importaciones
+   ------------------------------------------------------------
+   - Los <script> en el HTML se ejecutan en el ORDEN en que
+     aparecen, de arriba hacia abajo.
+   - Si un script depende de otro (usa una función o variable
+     definida en otro archivo), el que la define debe ir ANTES.
+   - Lo normal es poner los <script> justo antes de cerrar
+     </body>, para que el HTML cargue primero y la página no se
+     vea en blanco mientras se descarga el JS.
+   - Alternativa moderna: atributo `defer` en el <script> dentro
+     del <head>. Descarga en paralelo, pero ejecuta solo cuando el
+     HTML ya terminó de cargar, y respeta el orden entre varios
+     scripts con defer.
+
+   Ejemplo de HTML:
+
+   <head>
+       <script src="assets/js/utilidades.js" defer></script>
+       <script src="assets/js/app.js" defer></script>
+   </head>
+
+   Si "app.js" usa una función definida en "utilidades.js",
+   "utilidades.js" debe ir primero en el orden de los <script>.
+*/
+
+
+/* ------------------------------------------------------------
+   11. Principal problema con la inicialización de variables con var
+   ------------------------------------------------------------
+   - `var` tiene "hoisting": la declaración se sube al inicio del
+     scope, pero SIN su valor. Por eso se puede "usar" antes de
+     declararla sin error, solo da undefined.
+*/
+console.log(miVar); // undefined (no error)
+var miVar = 5;
+
+/*
+   - `let` y `const` sí existen desde el inicio del bloque, pero
+     quedan en la "temporal dead zone": usarlas antes de declararlas
+     lanza un ReferenceError. Esto ayuda a detectar errores antes.
+
+     console.log(miLet); // ReferenceError
+     let miLet = 5;
+
+   - Otro problema: `var` no respeta el alcance de bloque ({}),
+     solo el de función. Ejemplo clásico con un for:
+*/
+for (var i = 0; i < 3; i++) {}
+console.log('i fuera del for:', i); // 3 -> "i" se "escapó" del for
+
+for (let j = 0; j < 3; j++) {}
+// console.log('j fuera del for:', j); // ReferenceError -> "j" no existe aquí
+
+/*
+   - Por estas razones, hoy en día se recomienda usar siempre
+     `let` y `const`, y evitar `var`.
+*/
+
+
+/* ------------------------------------------------------------
+   12. Prompt, confirm y alert
+   ------------------------------------------------------------
+   Son funciones globales del navegador (BOM: Browser Object
+   Model), no de JS puro. Las tres son SÍNCRONAS y BLOQUEANTES:
+   mientras el usuario no responda, el resto del código no sigue.
+*/
+
+// alert(): muestra un mensaje con un botón "OK". No devuelve
+// ningún valor útil (undefined). Solo sirve para avisar algo.
+alert('Hola Mundo');
+
+// prompt(): muestra un campo de texto para que el usuario escriba
+// algo. Devuelve SIEMPRE un string, o `null` si cancela.
+let nombre = prompt('¿Cuál es tu nombre?');
+console.log(nombre);
+console.log('****' + nombre + '****'); // útil para detectar vacíos o espacios
+
+// confirm(): muestra dos botones, "Aceptar" y "Cancelar".
+// Devuelve un booleano: true si acepta, false si cancela.
+const seleccion = confirm('¿Está seguro de borrar esto?');
+console.log(seleccion);
+
+
+/* ------------------------------------------------------------
+   13. Nota general
    ------------------------------------------------------------
    JavaScript es un lenguaje interpretado: el código se ejecuta
    línea por línea y no necesita compilarse antes de ejecutarse.
