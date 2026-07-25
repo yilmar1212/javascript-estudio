@@ -45,4 +45,4 @@ Este repositorio contiene ejemplos y ejercicios que uso para aprender los fundam
 ## Progreso del curso
 
 - [x] Sección 1: Introducción
-- [ ] Sección 2: Introducción a JavaScript y la consola (en curso — 8/12)
+- [x] Sección 2: Introducción a JavaScript y la consola (en curso — 8/12)
