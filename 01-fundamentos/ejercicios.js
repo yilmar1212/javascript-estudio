@@ -1,3 +1,6 @@
+// ejercicios practicos de javascript
+
+
 /*function ejemplo (){
     let r = console.log("holas");
     return "r";
