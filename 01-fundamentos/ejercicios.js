@@ -1,6 +1,11 @@
 // ============================================================
-// Ejercicios prácticos de JavaScript
-// Funciones, parámetros, return y cómo se llaman las funciones
+// ejercicios.js — Ejercicios prácticos de la Sección 2
+// Funciones/return, scope en loops y operador "+"
+// ============================================================
+
+
+// ============================================================
+// PARTE A — Funciones, parámetros y return
 // ============================================================
 
 
@@ -83,8 +88,8 @@ console.log(nombreLocal + " tiene " + edad + " años ");
      Por eso, si hicieras console.log(saludar("carlos")), verías
      el saludo Y luego "undefined" (porque no hay return).
 */
-function saludar(nombre){
-    console.log("hola " + nombre );
+function saludar(nombreParam){
+    console.log("hola " + nombreParam );
 }
 
 saludar ("carlos");
@@ -103,8 +108,8 @@ saludar ("carlos");
      > Ejercicio 5: la función IMPRIME por dentro (no retorna nada útil)
      > Ejercicio 6: la función RETORNA el valor (no imprime nada por sí sola)
 */
-function saludarConReturn(nombre){
-    return "hola " + nombre;
+function saludarConReturn(nombreParam){
+    return "hola " + nombreParam;
 }
 
 console.log(saludarConReturn("Ana"));
@@ -137,18 +142,15 @@ console.log(sumar(5, 3));
    - Al concatenar con "+", JS convierte "edad" a texto
      automáticamente para poder unirlo con el resto del string.
    - Ojo con el detalle de este ejercicio: falta un espacio antes
-     de "tiene" (queda "María  tiene" con espacio extra o pegado,
-     dependiendo de cómo se escriba el string). Es un buen ejemplo
-     real de por qué hay que revisar bien los espacios al concatenar.
+     de "tiene" en el texto fijo; el espacio que separa las
+     palabras viene del argumento "María " (con espacio al final).
 */
-function presentar(nombre, edad){
-    return nombre + "tiene " + edad + " años";
+function presentar(nombreParam, edadParam){
+    return nombreParam + "tiene " + edadParam + " años";
 }
 
 console.log(presentar("María ", 22));
 // Salida: María tiene 22 años
-// (nota: el espacio final de "María " + "tiene " es lo que separa
-//  las palabras; si quitas ese espacio del argumento, quedarían pegadas)
 
 
 /* ------------------------------------------------------------
@@ -167,9 +169,9 @@ console.log(multiplicar(4, 6));
 // Salida: 24
 
 
-/* ============================================================
-   Resumen rápido de conceptos usados en estos ejercicios
-   ============================================================
+/* ------------------------------------------------------------
+   Resumen rápido — funciones, parámetros y return
+   ------------------------------------------------------------
    - Parámetro:  la "casilla vacía" que declaras entre los
                  paréntesis de la función (ej: nombre, edad).
    - Argumento:  el valor real que le pasas cuando LLAMAS
@@ -185,18 +187,14 @@ console.log(multiplicar(4, 6));
 */
 
 
-
-
 // ============================================================
-// Ejercicios: scope de var/let en loops + operador "+" y Number()
+// PARTE B — scope de var/let en loops + operador "+" y Number()
 // ============================================================
 
 
 /* ------------------------------------------------------------
-   PARTE 1 — var vs let dentro de un for
+   Recordatorio de cómo funciona un for
    ------------------------------------------------------------
-   Recordatorio de cómo funciona un for:
-
    for (inicio; condición; actualización) {
        // código
    }
@@ -209,7 +207,7 @@ console.log(multiplicar(4, 6));
 
 
 /* ------------------------------------------------------------
-   Ejercicio 1 — var se escapa del for
+   Ejercicio 10 — var se escapa del for
    ------------------------------------------------------------
    El bloque {} está vacío, no hace nada dentro. Aun así el for
    sigue funcionando: crea la variable, revisa la condición y
@@ -230,11 +228,11 @@ console.log(multiplicar(4, 6));
    Resultado: imprime 3
 */
 for (var i = 0; i < 3; i++) {}
-console.log('Ejercicio 1 (var):', i); // 3
+console.log('Ejercicio 10 (var):', i); // 3
 
 
 /* ------------------------------------------------------------
-   Ejercicio 2 — let SÍ muere al salir del for
+   Ejercicio 11 — let SÍ muere al salir del for
    ------------------------------------------------------------
    El recorrido de valores (0, 1, 2, 3) ocurre exactamente igual
    que con var. La diferencia está solo al terminar el loop.
@@ -251,7 +249,7 @@ console.log('Ejercicio 1 (var):', i); // 3
    descoméntala para comprobar el error tú mismo)
 */
 for (let j = 0; j < 3; j++) {}
-// console.log('Ejercicio 2 (let):', j); // ReferenceError: j is not defined
+// console.log('Ejercicio 11 (let):', j); // ReferenceError: j is not defined
 
 
 /* ------------------------------------------------------------
@@ -286,17 +284,8 @@ for (let y = 1; y <= 2; y++) {}
 // muere al cerrar el {} del for. No existe fuera de él.
 
 
-/* ============================================================
-   PARTE 2 — el operador "+", concatenación y Number()
-   ============================================================
-   Regla base: "+" SUMA si ambos valores son números, y
-   CONCATENA (pega texto) si al menos uno de los dos es string.
-   Además, JavaScript evalúa "+" de IZQUIERDA A DERECHA.
-*/
-
-
 /* ------------------------------------------------------------
-   Ejercicio 3 — Number() aplicado a un string ya concatenado
+   Ejercicio 12 — Number() aplicado a un string ya concatenado
    ------------------------------------------------------------
    console.log(Number("8" + "2"));
 
@@ -309,7 +298,7 @@ for (let y = 1; y <= 2; y++) {}
    Resultado: 82 (NO es 8 + 2 = 10, porque la suma nunca ocurre;
    lo que se suma "visualmente" en realidad se concatena primero)
 */
-console.log('Ejercicio 3:', Number("8" + "2")); // 82
+console.log('Ejercicio 12:', Number("8" + "2")); // 82
 
 /* Comparación con el caso que SÍ da 10: */
 console.log('Comparación (Number+Number):', Number("8") + Number("2")); // 10
@@ -318,7 +307,7 @@ console.log('Comparación (Number+Number):', Number("8") + Number("2")); // 10
 
 
 /* ------------------------------------------------------------
-   Ejercicio 4 — Orden de evaluación izquierda a derecha
+   Ejercicio 13 — Orden de evaluación izquierda a derecha
    ------------------------------------------------------------
    console.log("10" + 5 + 2);
 
@@ -333,16 +322,16 @@ console.log('Comparación (Number+Number):', Number("8") + Number("2")); // 10
    Resultado: "1052" (NO "107" — ese sería el resultado solo si
    se sumara 5 + 2 primero, pero eso no pasa sin paréntesis)
 */
-console.log('Ejercicio 4:', "10" + 5 + 2); // 1052
+console.log('Ejercicio 13:', "10" + 5 + 2); // 1052
 
 /* Con paréntesis el resultado SÍ cambia: */
-console.log('Ejercicio 4 con parentesis:', "10" + (5 + 2)); // 107
+console.log('Ejercicio 13 con parentesis:', "10" + (5 + 2)); // 107
 // Los paréntesis fuerzan a resolver "5 + 2" primero (Number + Number = 7),
 // y recién después concatena: "10" + 7 -> "107"
 
 
 /* ------------------------------------------------------------
-   Ejercicio 5 — Segundo caso de orden izquierda a derecha
+   Ejercicio 14 — Segundo caso de orden izquierda a derecha
    ------------------------------------------------------------
    console.log(10 + 5 + "2");
 
@@ -354,11 +343,11 @@ console.log('Ejercicio 4 con parentesis:', "10" + (5 + 2)); // 107
 
    Resultado: "152"
 */
-console.log('Ejercicio 5:', 10 + 5 + "2"); // 152
+console.log('Ejercicio 14:', 10 + 5 + "2"); // 152
 
 
 /* ------------------------------------------------------------
-   Ejercicio 6 — Tres variantes para comparar
+   Ejercicio 15 — Tres variantes para comparar
    ------------------------------------------------------------ */
 console.log('Variante A:', 1 + 2 + "3");
 // 1+2 -> 3 (número) ; 3 + "3" -> concatena -> "33"
@@ -371,7 +360,7 @@ console.log('Variante C:', 1 + "2" + 3);
 
 
 /* ------------------------------------------------------------
-   Ejercicio 7 — Combinando Number() con concatenación
+   Ejercicio 16 — Combinando Number() con concatenación
    ------------------------------------------------------------
    console.log(Number("10") + "5" + Number("2"));
 
@@ -390,17 +379,17 @@ console.log('Variante C:', 1 + "2" + 3);
 
    Resultado: "1052"
 */
-console.log('Ejercicio 7:', Number("10") + "5" + Number("2")); // 1052
+console.log('Ejercicio 16:', Number("10") + "5" + Number("2")); // 1052
 
 
-/* ============================================================
-   Resumen de reglas clave
-   ============================================================
-   1. "+" con AMBOS números -> suma matemática.
-   2. "+" con AL MENOS UN string -> concatena (pega texto).
-   3. Se evalúa siempre de IZQUIERDA A DERECHA, de dos en dos.
-   4. Los paréntesis () cambian el orden y por lo tanto el
-      resultado, igual que en matemáticas.
-   5. Number("texto") convierte string a número ANTES de que
-      ese resultado participe en el resto de la expresión.
+/* ------------------------------------------------------------
+   Resumen de reglas clave — scope y operador +
+   ------------------------------------------------------------
+   1. var no respeta bloques ({}), solo funciones. let sí respeta bloques.
+   2. "+" con AMBOS números -> suma matemática.
+   3. "+" con AL MENOS UN string -> concatena (pega texto).
+   4. Se evalúa siempre de IZQUIERDA A DERECHA, de dos en dos.
+   5. Los paréntesis () cambian el orden y por lo tanto el resultado.
+   6. Number("texto") convierte string a número ANTES de que ese
+      resultado participe en el resto de la expresión.
 */
