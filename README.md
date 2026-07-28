@@ -32,7 +32,7 @@ Cada carpeta nueva de sección va a seguir el mismo patrón: su propio `README.m
 
 | Sección | Estado | Temas principales |
 |---|---|---|
-| [`01-fundamentos`](./01-fundamentos/README.md) | 🟡 En curso | Variables (`var`/`let`/`const`), scope, hoisting, `console`, debugging, `alert`/`prompt`/`confirm`, funciones y `return`, operador `+` |
+| [`01-fundamentos`](./01-fundamentos/README.md) | 🟢 Terminado | Variables (`var`/`let`/`const`), scope, hoisting, `console`, debugging, `alert`/`prompt`/`confirm`, funciones y `return`, operador `+` |
 
 *(Esta tabla se va actualizando a medida que se agregan secciones nuevas)*
 
