@@ -1,48 +1,54 @@
 # Curso de JavaScript
 
-Este repositorio contiene ejemplos y ejercicios que uso para aprender los fundamentos de JavaScript, siguiendo el curso de DevTalles.
+Repositorio de estudio donde documento mi progreso aprendiendo JavaScript desde cero, siguiendo el curso de **DevTalles**. Cada carpeta corresponde a una sección del curso, con su propio código comentado y su propio README explicando los temas vistos ahí.
 
-## Estructura del proyecto
+## ¿Qué es esto?
+
+Este no es un repo de un solo proyecto — es una **bitácora de aprendizaje**. Cada carpeta (`01-fundamentos`, `02-...`, etc.) contiene los ejemplos, ejercicios y notas de una sección específica del curso, con comentarios explicando el *por qué* de cada línea, no solo el *qué*.
+
+## ¿Por qué documento así?
+
+Vengo de haber estudiado Python, Java y Racket, y de trabajar en mi propio homelab (Arch Linux, redes, virtualización). Mi objetivo con este repo es:
+
+- Construir una base sólida de JavaScript antes de avanzar a TypeScript, Node.js y NestJS
+- Tener un registro propio al que volver cuando se me olvide algo (mejor que depender solo de la memoria o de rebuscar en el curso)
+- Practicar el mismo flujo de trabajo con Git/GitHub que voy a usar en proyectos reales: commits pequeños, ramas por tema, y documentación clara
+
+## Estructura del repositorio
 
 ```
-01-fundamentos/
-├── index.html   # Página HTML principal que carga los scripts de JavaScript
-└── app.js       # Ejemplos comentados de la Sección 2 del curso
+curso-javascript/
+├── README.md              # Este archivo
+└── 01-fundamentos/
+    ├── README.md           # Detalle de los temas de esta sección
+    ├── index.html
+    ├── app.js
+    └── ejercicios.js
 ```
 
-## ¿Qué incluye?
+Cada carpeta nueva de sección va a seguir el mismo patrón: su propio `README.md` con el detalle de los temas, y el código correspondiente.
 
-`01-fundamentos/app.js` cubre los temas de la **Sección 2: Introducción a JavaScript y la consola**:
+## Secciones
 
-1. `console.log()` — qué hace y cómo funciona
-2. Declaración de variables (`let`, `var`, `const`)
-3. Diferencias entre `var`, `let` y `const`
-4. `console.log()` con etiquetas
-5. `console.log()` con objetos (`{ }`)
-6. Operaciones con variables
-7. Otros métodos de consola (`console.warn`, `console.error`, `console.info`)
-8. `console.table()`
-9. Depuración y breakpoints
-10. Orden y lugar de las importaciones
-11. Principal problema con la inicialización de variables con `var`
-12. `prompt`, `confirm` y `alert`
-13. Nota general sobre JavaScript como lenguaje interpretado
+| Sección | Estado | Temas principales |
+|---|---|---|
+| [`01-fundamentos`](./01-fundamentos/README.md) | 🟡 En curso | Variables (`var`/`let`/`const`), scope, hoisting, `console`, debugging, `alert`/`prompt`/`confirm`, funciones y `return`, operador `+` |
 
-## Cómo usarlo
+*(Esta tabla se va actualizando a medida que se agregan secciones nuevas)*
 
-1. Abre `01-fundamentos/index.html` en tu navegador.
-2. Abre la consola del desarrollador (`F12` o `Ctrl+Shift+I`).
-3. Verás los ejemplos de `app.js` ejecutándose, con mensajes explicativos en la consola.
+## Ruta de aprendizaje
 
-> Nota: algunos ejemplos usan `alert`, `prompt` y `confirm`, que solo funcionan en el navegador (no en Node.js).
+Este repo cubre la primera parte de mi ruta de estudio actual:
 
-## Notas
+**JavaScript** → TypeScript → Node.js → NestJS
 
-- Este proyecto está pensado para los primeros pasos con JavaScript.
-- Cada tema está documentado directamente en el código con comentarios explicativos.
-- Puedes editar `app.js` y recargar la página para probar nuevos ejemplos.
+## Cómo usar este repositorio
 
-## Progreso del curso
+1. Entra a la carpeta de la sección que te interese (ej. `01-fundamentos/`).
+2. Lee el `README.md` de esa carpeta para tener el contexto de los temas.
+3. Abre el `index.html` correspondiente en el navegador, o corre los `.js` con Node (`node archivo.js`) para ver los ejemplos en acción.
 
-- [x] Sección 1: Introducción
-- [x] Sección 2: Introducción a JavaScript y la consola (en curso — 8/12)
+## Autor
+
+**Yilmar** — Estudiante de Ingeniería de Sistemas, Universidad del Valle (sede Tuluá).
+GitHub: [@yilmar1212](https://github.com/yilmar1212)
