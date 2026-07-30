@@ -20,19 +20,25 @@ Vengo de haber estudiado Python, Java y Racket, y de trabajar en mi propio homel
 curso-javascript/
 ├── README.md              # Este archivo
 └── 01-fundamentos/
-    ├── README.md           # Detalle de los temas de esta sección
+    ├── README.md            # Detalle de los temas de esta sección
+    ├── teoria/
+    │   ├── primitivos.js
+    │   ├── palabras-reservadas.js
+    │   └── arreglos.js
+    ├── ejercicios/
+    │   └── ejercicios.js
+    ├── codigo-seccion/
     ├── index.html
-    ├── app.js
-    └── ejercicios.js
+    └── app.js
 ```
 
-Cada carpeta nueva de sección va a seguir el mismo patrón: su propio `README.md` con el detalle de los temas, y el código correspondiente.
+Cada carpeta nueva de sección va a seguir el mismo patrón: su propio `README.md` con el detalle de los temas, y el código correspondiente organizado en `teoria/` y `ejercicios/`.
 
 ## Secciones
 
 | Sección | Estado | Temas principales |
 |---|---|---|
-| [`01-fundamentos`](./01-fundamentos/README.md) | 🟢 Terminado | Variables (`var`/`let`/`const`), scope, hoisting, `console`, debugging, `alert`/`prompt`/`confirm`, funciones y `return`, operador `+` |
+| [`01-fundamentos`](./01-fundamentos/README.md) | 🟢 Terminado | Variables (`var`/`let`/`const`), scope, hoisting, `console`, debugging, `alert`/`prompt`/`confirm`, funciones y `return`, operador `+`, tipos primitivos, palabras reservadas, arreglos |
 
 *(Esta tabla se va actualizando a medida que se agregan secciones nuevas)*
 
@@ -46,7 +52,8 @@ Este repo cubre la primera parte de mi ruta de estudio actual:
 
 1. Entra a la carpeta de la sección que te interese (ej. `01-fundamentos/`).
 2. Lee el `README.md` de esa carpeta para tener el contexto de los temas.
-3. Abre el `index.html` correspondiente en el navegador, o corre los `.js` con Node (`node archivo.js`) para ver los ejemplos en acción.
+3. Revisa `teoria/` para los conceptos explicados y `ejercicios/` para la práctica.
+4. Abre el `index.html` correspondiente en el navegador, o corre los `.js` con Node (`node archivo.js`) para ver los ejemplos en acción.
 
 ## Autor
 
