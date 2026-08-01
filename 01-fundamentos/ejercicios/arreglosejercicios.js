@@ -80,3 +80,5 @@ console.log(peleadoresUFC[peleadoresUFC.length - 1]); // ultimo elemento usando 
 peleadoresUFC.forEach((peleador) => { // recorrer todo con forEach
     console.log(peleador);
 });
+
+console.log(peleadoresUFC); // mostrar el arreglo final
