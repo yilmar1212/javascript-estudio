@@ -74,6 +74,7 @@ README de la Sección 2 del curso: *Introducción a JavaScript y la consola*. Aq
 - Notación literal `[]` vs. constructor `new Array()`
 - Un arreglo puede mezclar tipos de datos distintos (booleans, numbers, strings, funciones, objetos, otros arreglos)
 - Arreglos anidados y acceso encadenado (`arreglo[7][3][1]`)
+- hay ejercicios en la carpeta de ejercicios XD (valga la redundancia), (./01-fundamentos/ejercicios/arreglosejercicios.js)
 
 ## Cómo usarlo
 
