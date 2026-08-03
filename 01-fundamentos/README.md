@@ -46,7 +46,7 @@ README de la Sección 2 del curso: *Introducción a JavaScript y la consola*. Aq
 - `return` saca el valor de la función hacia afuera; el `=` es quien lo guarda en una variable
 - Sin `return`, la función devuelve `undefined`
 - `return` también corta la ejecución (nada después de él corre)
-- Parámetro vs. argumento, cómo se llama una función (ver `ejercicios/ejercicios.js`)
+- Parámetro vs. argumento, cómo se llama una función (ejercicios/ejercicios.js)
 
 ### 6. El operador `+`: suma vs. concatenación
 - Con dos números: suma matemática
