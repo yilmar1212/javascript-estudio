@@ -81,6 +81,7 @@ README de la Sección 2 del curso: *Introducción a JavaScript y la consola*. Aq
 1. Abre `index.html` en el navegador y abre la consola (`F12`).
 2. Revisa `app.js` y los archivos en `teoria/` para ver los ejemplos organizados por tema.
 3. Corre los archivos de `ejercicios/` con Node (`node ejercicios/ejercicios.js`) o en el navegador, para ver las salidas reales.
+4. otra opcion que uso es usar un compilador web, y los pedacitos de codigo ir poniendolos en dicho compilador 
 
 ## Progreso del curso
 

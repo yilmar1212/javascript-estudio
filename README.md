@@ -54,6 +54,7 @@ Este repo cubre la primera parte de mi ruta de estudio actual:
 2. Lee el `README.md` de esa carpeta para tener el contexto de los temas.
 3. Revisa `teoria/` para los conceptos explicados y `ejercicios/` para la práctica.
 4. Abre el `index.html` correspondiente en el navegador, o corre los `.js` con Node (`node archivo.js`) para ver los ejemplos en acción.
+5. otra opcion que uso es usar un compilador web, y los pedacitos de codigo ir poniendolos en dicho compilador, yo use este: ([text](https://www.programiz.com/javascript/online-compiler/))
 
 ## Autor
 
