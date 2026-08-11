@@ -82,6 +82,70 @@ console.log(`el producto esta ${stock > 0 ? "disponible" : "agotado"}`);
 
 // se pueden anidar, pero ojo con esto, si se pasa de dos niveles ya se vuelve
 // dificil de leer, ahi mejor toca usar if/else normal o un switch
-let nota = 7;
-let calificacion = (nota >= 9) ? "excelente" : (nota >= 6) ? "aprobado" : "reprobado";
+let notaFinal = 7;
+let calificacion = (notaFinal >= 9) ? "excelente" : (notaFinal >= 6) ? "aprobado" : "reprobado";
 console.log(calificacion);
+
+
+
+
+
+
+
+// otros usos del operador ternario
+
+const elMayor = (a, b) => (a > b) ? a : b; // una funcion de flecha se puede simplificar asi, sin llaves ni return
+
+const tieneMembresia = (miembro) => (miembro) ? "2 dolares" : ("10 dolares");
+// si no hay una condicion se puede dejar sin parentesis, por ejemplo un boleano, pero en este caso dejemoslo
+
+console.log(elMayor(20, 15))
+console.log(tieneMembresia(false))
+
+
+// el ternario tambien sirve para meter un valor condicional adentro de un arreglo,
+// como un elemento mas de la lista
+
+const amigo = false;
+const amigosArr = [
+    'Peter',
+    'Tony',
+    'Dr. Strange',
+    amigo ? 'Thor' : 'Loki', // aqui el arreglo no guarda "amigo ? ... : ..." como texto,
+                               // guarda el RESULTADO de evaluar esa condicion, en este caso 'Loki'
+
+    // se puede meter hasta una funcion que se ejecuta al instante (arrow function
+    // envuelta en parentesis, seguida de sus propios parentesis para llamarla ya mismo)
+    // (() => 'Nick Fury')()
+    elMayor(10, 15) // o simplemente llamar una funcion normal que ya tenias, tambien
+                      // guarda el resultado que retorne, en este caso 15
+];
+
+console.log(amigosArr);
+// ['Peter', 'Tony', 'Dr. Strange', 'Loki', 15]
+
+
+// ternario encadenado, para simular varios "escalones" de condiciones sin escribir
+// un monton de else if. se lee de arriba hacia abajo, apenas una condicion da true
+// ese es el valor que se queda, e ignora las de abajo
+
+const nota = 65; // A+ A B+
+const grado = nota >= 95 ? 'A+' :
+              nota >= 90 ? 'A' :
+              nota >= 85 ? 'B+' :
+              nota >= 80 ? 'B' :
+              nota >= 75 ? 'C+' :
+              nota >= 70 ? 'C' : 'F';
+
+console.log({ nota, grado });
+// con nota = 65, ninguna condicion de arriba se cumple, entonces cae hasta el
+// ultimo ':' y se queda con 'F'
+
+// esto es equivalente a escribir:
+// if (nota >= 95) grado = 'A+';
+// else if (nota >= 90) grado = 'A';
+// else if (nota >= 85) grado = 'B+';
+// ...y asi sucesivamente
+// pero ojo, esto solo se ve bien organizado si se alinean los ':' como aqui,
+// si se escribe todo pegado en una sola linea se vuelve ilegible rapido
+
