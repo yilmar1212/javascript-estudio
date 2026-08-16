@@ -52,7 +52,7 @@ const pedirCarta = ( ) => {
 
     console.log (deck)
     console.log (carta); //carta debe ser de la baraja
-    return;
+    return carta;
 }
 
 
@@ -67,4 +67,33 @@ pedirCarta();
 
 
 
-pedirCarta();
+// pedirCarta();
+
+
+
+const valorCarta = ( carta ) => {
+    const valor = carta.substring(0, carta.length - 1);
+    return ( isNaN( valor )) ?
+    (valor === "A") ? 11 : 10
+    : valor * 1;
+
+}
+
+/* vamos a hacer mas pequeña la funcion
+
+    let puntos = 0;
+    if ( isNaN(valor)){
+        puntos = (valor === "A") ? 11 : 10; 
+    }else {
+        puntos = valor * 1; //convertirlo de string a un numero
+    }
+
+    console.log(puntos);
+} 
+
+
+valroCarta("9D");
+*/
+
+const valor = valorCarta( pedirCarta() );
+console.log({ valor })
