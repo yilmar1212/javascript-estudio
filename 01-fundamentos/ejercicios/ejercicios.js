@@ -393,3 +393,119 @@ console.log('Ejercicio 16:', Number("10") + "5" + Number("2")); // 1052
    6. Number("texto") convierte string a número ANTES de que ese
       resultado participe en el resto de la expresión.
 */
+
+
+
+
+// ================================================
+// EJERCICIOS RESUELTOS - JS (CODEWARS)
+// aca voy guardando los ejercicios que voy resolviendo
+// cada uno tiene el enunciado, el codigo y una explicacion corta
+// ================================================
+
+
+// ------------------------------------------------
+// booleanToString
+// ------------------------------------------------
+// enunciado: implementa una funcion que convierta el valor booleano
+// dado en su representacion de cadena. solo se admiten datos validos
+
+// la idea es simple: usar String() que convierte cualquier cosa a texto.
+// si le paso true, me devuelve el string "true" (no el booleano, el texto)
+function booleanToString(b) {
+  const text = String(b);
+  return (text);
+}
+
+console.log(booleanToString(true));  // "true"
+console.log(booleanToString(false)); // "false"
+
+
+// ------------------------------------------------
+// paperwork
+// ------------------------------------------------
+// enunciado: tus compañeros te pidieron sacar copias de unos papeles.
+// hay 'n' compañeros y el papeleo tiene 'm' paginas.
+// calcula cuantas hojas necesitas en total.
+// si n < 0 o m < 0, devolver 0
+// ejemplo: n=5, m=5 -> 25 | n=-5, m=5 -> 0
+
+// aca hay que pensar en dos casos: el caso raro (numeros negativos, que no
+// tiene sentido en la vida real) y el caso normal, que es solo multiplicar
+// paginas por compañeros
+function paperwork(n, m) {
+  if (n < 0 || m < 0) {
+    return 0;
+  } else {
+    const num = n * m;
+    return num;
+  }
+}
+
+console.log(paperwork(5, 5));  // 25
+console.log(paperwork(-5, 5)); // 0
+
+
+// ------------------------------------------------
+// greet
+// ------------------------------------------------
+// enunciado: crea una funcion que de un saludo personalizado.
+// recibe name y owner.
+// si name es igual a owner -> 'Hola jefe'
+// si no -> 'Hola, invitado' (ojo con la coma, el texto tiene que calzar exacto)
+
+// esto es basicamente comparar dos strings. si el nombre que entra
+// coincide con el dueño, es el jefe. si no, es cualquier invitado
+function greet(name, owner) {
+  if (name == owner) {
+    let jefe = ("Hola jefe");
+    return jefe;
+  } else {
+    let invitado = ("Hola, invitado");
+    return invitado;
+  }
+}
+
+console.log(greet("Carlos", "Carlos")); // "Hola jefe"
+console.log(greet("Ana", "Carlos"));    // "Hola, invitado"
+
+
+// ------------------------------------------------
+// numberToString
+// ------------------------------------------------
+// enunciado: necesitamos una funcion que transforme un numero (entero)
+// en un string.
+// ejemplos: 123 -> "123" | 999 -> "999" | -100 -> "-100"
+
+// mismo truco que el primer ejercicio, String() sirve para cualquier
+// tipo de dato, no solo booleanos
+function numberToString(num) {
+  let number = String(num);
+  return number;
+}
+
+console.log(numberToString(123));  // "123"
+console.log(numberToString(999));  // "999"
+console.log(numberToString(-100)); // "-100"
+
+
+// ------------------------------------------------
+// boolToWord
+// ------------------------------------------------
+// enunciado: completa el metodo que recibe un booleano y devuelve
+// el string "Yes" si es true, o "No" si es false
+
+// use dos if separados comparando explicitamente con === true y === false
+// (tambien se puede mas corto con "if (bool)" directo, pero esta forma
+// se entiende igual de bien)
+function boolToWord(bool) {
+  if (bool === true) {
+    return "Yes";
+  }
+  if (bool === false) {
+    return "No";
+  }
+}
+
+console.log(boolToWord(true));  // "Yes"
+console.log(boolToWord(false)); // "No"
