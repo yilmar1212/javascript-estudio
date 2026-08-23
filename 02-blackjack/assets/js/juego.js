@@ -8,6 +8,16 @@ let deck = [];
 const tipos = ["C", "D", "H", "S"]
 const especiales = ["A", "J", "Q", "K"]
 
+let puntosJugador = 0,
+ puntosComputadora = 0;
+
+
+// Referencias del html
+
+const btnPedir = document.querySelector("#btnPedir");
+
+const puntosHTML = document.querySelectorAll("small");
+
 
 
 const crearDeck = () => {
@@ -50,8 +60,8 @@ const pedirCarta = ( ) => {
 
     const carta = deck.pop();
 
-    console.log (deck)
-    console.log (carta); //carta debe ser de la baraja
+//    console.log (deck)
+//    console.log (carta); //carta debe ser de la baraja
     return carta;
 }
 
@@ -95,5 +105,18 @@ const valorCarta = ( carta ) => {
 valroCarta("9D");
 */
 
-const valor = valorCarta( pedirCarta() );
-console.log({ valor })
+// const valor = valorCarta( pedirCarta() );
+// console.log({ valor })
+
+
+// EVENTOS
+
+
+btnPedir.addEventListener("click",  () => {
+    
+    const carta = pedirCarta();
+    
+    puntosJugador = puntosJugador + valorCarta( carta );
+    puntosHTML[0].innerText = puntosJugador;    
+
+} );
