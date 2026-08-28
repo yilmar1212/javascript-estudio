@@ -4,34 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <!-- Bootstrap desde un CDN, para no tener que escribir estilos de botones/grid a mano -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Estilos propios del proyecto (los personalizados, como la clase .carta que usa el JS) -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
+    <!-- Título de la página, con una clase custom definida en styles.css -->
     <header class="titulo">
         Blackjack
     </header>
-    
 
+
+    <!-- Fila con los 3 botones del juego, centrados -->
     <div class="row mt-2">
         <div class="col text-center">
+            <!-- Estos 3 ids son justo los que juego.js busca con document.querySelector -->
             <button id="btnNuevo" class="btn btn-danger">Nuevo juego</button>
             <button id="btnPedir" class="btn btn-primary">Pedir carta</button>
             <button id="btnDetener" class="btn btn-primary">Detener</button>
-
 
         </div>
     </div>
 
 
-
+    <!-- Sección del jugador -->
     <div class="row container">
         <div class="col">
 
+            <!-- El <small> es donde juego.js mete el puntaje (puntosHTML[0] apunta a este) -->
             <h1>jugador 1 - <small>0</small></h1>
+
+            <!-- Acá se van agregando dinámicamente las <img> de cada carta que pide el jugador -->
             <div id="jugador-cartas">
-                   
+
 
             </div>
 
@@ -39,12 +46,14 @@
     </div>
 
 
-
-
+    <!-- Sección de la computadora, misma estructura que la del jugador -->
     <div class="row container">
         <div class="col">
 
+            <!-- Este <small> es puntosHTML[1] en el JS, el puntaje de la compu -->
             <h1>computadora - <small>0</small></h1>
+
+            <!-- Acá se agregan las cartas que va sacando la computadora en su turno -->
             <div id="computadora-cartas">
 
             </div>
@@ -53,8 +62,9 @@
     </div>
 
 
-
+    <!-- underscore se carga primero porque juego.js usa _.shuffle() para mezclar el deck -->
     <script src="assets/js/underscore-min.js"></script>
+    <!-- Acá va toda la lógica del juego (el archivo que ya comentamos) -->
     <script src="assets/js/juego.js"></script>
 </body>
 </html>
