@@ -28,16 +28,45 @@ class Persona {
         this.codigo = codigo;
         this.frase = frase;
     }
+
+    //para crearse un metodo no es obligatorio ponerlo despues del constructor,
+    //se puede poner antes del constructor, pero es buena practica hacerlo despues
+    quienSoy(){
+        console.log(`soy ${this.nombre} y mi identidad es ${this.codigo}`);
+        
+    }
+
+    miFrase(){
+        this.quienSoy(); 
+        console.log(` ${this.codigo} dice: ${this.frase}`);
+    }
+
+    // debemos estar concientes de que podemos llamar los metodos dentro de la misma clase
+    // y debe ser con el this
+
 }
  
  
-const spiderman = new Persona("Peter Parker", "Spider", "soy tu amigable vecino Spiderman");
+const spiderman = new Persona("Peter Parker", "Spiderman", "soy tu amigable vecino Spiderman");
+const ironman = new Persona("Tony stark", "Iron Man", "Genio, millonario, playboy, filántropo");
+
 console.log(spiderman);
+console.log(ironman);
+
+
+spiderman.quienSoy(); //se necesitan los parentesis para ejecutarlo
+ironman.quienSoy();
+
+
+spiderman.miFrase();
+ironman.miFrase();
+
+
 // deberia salir algo como:
 // Persona { nombre: 'Peter Parker', codigo: 'Spider', frase: 'soy tu amigable vecino Spiderman' }
  
  
-// comparando con la funcion constructora del archivo anterior:
+// comparando con la funcion constructora del archivo anterior (problema.js):
 // - alla tocaba escribir "function Persona(...)" y meterle this.algo
 //   a mano por cada propiedad, y hasta los metodos se armaban con
 //   this.metodo = function(){}
@@ -49,3 +78,5 @@ console.log(spiderman);
 //
 // osea que si, esta es la forma buena/limpia, la funcion constructora
 // de antes es como el abuelo de esto
+
+
